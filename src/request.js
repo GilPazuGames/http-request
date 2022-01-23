@@ -62,8 +62,12 @@ class Request {
         );
       }
 
-      if (path && Object.keys(params).length) {
-        path = [path, new URLSearchParams(params)].join("?");
+      if (path) {
+        if (params instanceof URLSearchParams) {
+          path = [path, params.toString()].join("?");
+        } else if (Object.keys(params).length) {
+          path = [path, new URLSearchParams(params)].join("?");
+        }
       }
 
       const options = {
