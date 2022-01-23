@@ -24,7 +24,7 @@ class Request {
   }
 
   GET(path, params, headers) {
-    return this.makeRequest("GET", path, params, headers);
+    return this.makeRequest("GET", path, params, {}, headers);
   }
 
   POST(path, params, data, headers) {
