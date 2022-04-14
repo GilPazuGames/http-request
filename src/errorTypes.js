@@ -41,8 +41,7 @@ exports.types = {
 
 class ApiError extends Error {
   constructor(type, context) {
-    super(JSON.stringify(...type));
-    this.context = context;
+    super(JSON.stringify(type, context));
   }
 }
 
