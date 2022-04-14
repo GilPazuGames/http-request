@@ -39,7 +39,7 @@ class Request {
     return this.makeRequest("DELETE", path, params, data, headers);
   }
 
-  makeRequest(method, path, params, data, headers) {
+  makeRequest(method, path = "", params = {}, data = {}, headers = {}) {
     return new Promise((resolve, reject) => {
       params = params || {};
       data = data || {};
