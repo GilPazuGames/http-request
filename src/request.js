@@ -23,19 +23,19 @@ class Request {
     this.http = this.options.secure ? require("https") : require("http");
   }
 
-  GET(path, params, headers) {
+  GET({ path, params, headers }) {
     return this.makeRequest("GET", path, params, {}, headers);
   }
 
-  POST(path, params, data, headers) {
+  POST({ path, params, data, headers }) {
     return this.makeRequest("POST", path, params, data, headers);
   }
 
-  PUT(path, params, data, headers) {
+  PUT({ path, params, data, headers }) {
     return this.makeRequest("PUT", path, params, data, headers);
   }
 
-  DELETE(path, params, data, headers) {
+  DELETE({ path, params, data, headers }) {
     return this.makeRequest("DELETE", path, params, data, headers);
   }
 
