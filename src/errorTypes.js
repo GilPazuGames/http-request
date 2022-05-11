@@ -40,7 +40,7 @@ exports.types = {
 };
 
 class ApiError extends Error {
-  constructor(type, context) {
+  constructor(type, context = "") {
     super(JSON.stringify(type, context));
   }
 }
